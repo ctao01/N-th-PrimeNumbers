@@ -45,6 +45,8 @@ typedef enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.primeNumbers = [[NSArray alloc]init];
+//    self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0);
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 
@@ -89,7 +91,6 @@ typedef enum {
                 d++;
             }
             if (isPrime) {
-                //            NSLog(@"%i - %i", count, value);
                 [newNumbers addObject: [NSNumber numberWithInt:value]];
                 count ++;
                 
@@ -102,8 +103,8 @@ typedef enum {
         
         NSMutableDictionary * new = [NSMutableDictionary dictionaryWithDictionary:[self totalCachedNumbers]];
         [new setObject:totals forKey:[NSString stringWithFormat:@"%d", nth]];
-        [[NSUserDefaults standardUserDefaults]removeObjectForKey: Cached];
-        [[NSUserDefaults standardUserDefaults]setObject:new forKey: Cached];
+        [[NSUserDefaults standardUserDefaults]removeObjectForKey: CachedQueries];
+        [[NSUserDefaults standardUserDefaults]setObject:new forKey: CachedQueries];
         
         self.primeNumbers = totals;
         
@@ -139,8 +140,8 @@ typedef enum {
         }
         NSMutableDictionary * new = [NSMutableDictionary dictionaryWithDictionary:[self totalCachedNumbers]];
         [new setObject:numbers forKey:[NSString stringWithFormat:@"%d",nth]];
-        [[NSUserDefaults standardUserDefaults]removeObjectForKey:Cached];
-        [[NSUserDefaults standardUserDefaults]setObject:new forKey:Cached];
+        [[NSUserDefaults standardUserDefaults]removeObjectForKey:CachedQueries];
+        [[NSUserDefaults standardUserDefaults]setObject:new forKey:CachedQueries];
         
         self.primeNumbers = numbers;
     }
@@ -175,15 +176,15 @@ typedef enum {
 
 - (NSDictionary *) totalCachedNumbers
 {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:Cached];
+    return [[NSUserDefaults standardUserDefaults] objectForKey:CachedQueries];
 }
 
 - (NSMutableDictionary*) isCachedQuery:(int)nth
 {
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"intValue" ascending:NO];
-    NSDictionary * cachedDict = [[NSUserDefaults standardUserDefaults] objectForKey:Cached];
+    NSDictionary * cachedDict = [[NSUserDefaults standardUserDefaults] objectForKey:CachedQueries];
     if (cachedDict == nil) {
-        [[NSUserDefaults standardUserDefaults]setObject:[NSMutableDictionary new] forKey:Cached];
+        [[NSUserDefaults standardUserDefaults]setObject:[NSMutableDictionary new] forKey:CachedQueries];
     }
     NSArray * keys = [[cachedDict allKeys] sortedArrayUsingDescriptors:@[sortDescriptor]];
     

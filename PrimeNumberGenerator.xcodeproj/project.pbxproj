@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9570126B1D5E64EA001B1284 /* numbers_blur_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9570126A1D5E64EA001B1284 /* numbers_blur_bg.png */; };
+		959645A21D5D7AED008F1F27 /* QueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959645A11D5D7AED008F1F27 /* QueryViewController.m */; };
 		95BD18581D5CEBD100EAC8D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BD18571D5CEBD100EAC8D2 /* main.m */; };
 		95BD18611D5CEBD100EAC8D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95BD185F1D5CEBD100EAC8D2 /* Main.storyboard */; };
 		95BD18631D5CEBD100EAC8D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95BD18621D5CEBD100EAC8D2 /* Assets.xcassets */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9570126A1D5E64EA001B1284 /* numbers_blur_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbers_blur_bg.png; sourceTree = "<group>"; };
+		959645A01D5D7AED008F1F27 /* QueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryViewController.h; sourceTree = "<group>"; };
+		959645A11D5D7AED008F1F27 /* QueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryViewController.m; sourceTree = "<group>"; };
 		95BD18531D5CEBD100EAC8D2 /* PrimeNumberGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeNumberGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95BD18571D5CEBD100EAC8D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		95BD18601D5CEBD100EAC8D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,6 +91,8 @@
 			children = (
 				95BD18711D5CF8F900EAC8D2 /* AppDelegate.h */,
 				95BD18721D5CF8F900EAC8D2 /* AppDelegate.m */,
+				959645A01D5D7AED008F1F27 /* QueryViewController.h */,
+				959645A11D5D7AED008F1F27 /* QueryViewController.m */,
 				95BD18741D5CF93B00EAC8D2 /* ResultListViewController.h */,
 				95BD18751D5CF93B00EAC8D2 /* ResultListViewController.m */,
 				95BD18771D5CFEDF00EAC8D2 /* Constants.h */,
@@ -98,6 +105,7 @@
 		95BD18701D5CF8D300EAC8D2 /* Assests */ = {
 			isa = PBXGroup;
 			children = (
+				9570126A1D5E64EA001B1284 /* numbers_blur_bg.png */,
 			);
 			path = Assests;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 			files = (
 				95BD18661D5CEBD100EAC8D2 /* LaunchScreen.storyboard in Resources */,
 				95BD18631D5CEBD100EAC8D2 /* Assets.xcassets in Resources */,
+				9570126B1D5E64EA001B1284 /* numbers_blur_bg.png in Resources */,
 				95BD18611D5CEBD100EAC8D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,6 +184,7 @@
 				95BD18731D5CF8F900EAC8D2 /* AppDelegate.m in Sources */,
 				95BD18581D5CEBD100EAC8D2 /* main.m in Sources */,
 				95BD187A1D5D39EF00EAC8D2 /* RootViewController.m in Sources */,
+				959645A21D5D7AED008F1F27 /* QueryViewController.m in Sources */,
 				95BD18761D5CF93B00EAC8D2 /* ResultListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +336,7 @@
 				95BD186C1D5CEBD100EAC8D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

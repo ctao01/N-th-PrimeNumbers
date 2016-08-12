@@ -7,10 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QueryViewController.h"
+#import "ResultListViewController.h"
 
-@protocol PrimeNumbersGeneratorDelegate;
 
-@interface RootViewController : UIViewController
-@property (nonatomic , strong) IBOutlet UITextField * inputField;
+@interface RootViewController : UIViewController < QueryControllerDelegate >
+
+@property (weak, nonatomic) QueryViewController * vcTop;
+@property (weak, nonatomic) IBOutlet UIView * topView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * bottomConstraint;
+
+@property (weak, nonatomic) ResultListViewController * vcResult;
+@property (weak, nonatomic) IBOutlet UIView * resultView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint * heightConstraint;
+
+
 @end
 

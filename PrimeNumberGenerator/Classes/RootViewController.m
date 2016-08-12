@@ -7,13 +7,9 @@
 //
 
 #import "RootViewController.h"
-#import "Constants.h"
 #import "ResultListViewController.h"
 
-@interface RootViewController ()
-@property (nonatomic , strong) ResultListViewController * vcResult;
-@end
-
+#import "Constants.h"
 
 @implementation RootViewController
 
@@ -21,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                 forBarPosition:UIBarPositionAny
+                                                     barMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.backgroundColor = ThemeColor;
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    self.navigationItem.title = @"Prime Numbers";
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,34 +33,113 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"EmbededResultsIdentifier"]) {
+    if ([segue.identifier isEqualToString:@"EmbededResultsIdentifier"])
+    {
         self.vcResult = segue.destinationViewController;
+    }
+    else if ([segue.identifier isEqualToString:@"EmbededGeneratorIdentifier"])
+    {
+        self.vcTop = segue.destinationViewController;
+        self.vcTop.delegate = self;
     }
 }
 
+#pragma mark - QueryController Delegate
 
-#pragma mark - Actions
-
-- (IBAction) generatePrimeNumbers:(id)sender
+- (void) generatePrimeNumbersByInputValue:(int)value
 {
-    BOOL validate = [self validateInputFields:self.inputField.text];
-    if (!validate)
+    [self.vcResult getPrimeNumbersToNthNumber:value];
+    
+    
+    [UIView animateWithDuration:.6f delay:0.0f usingSpringWithDamping:0.75f initialSpringVelocity:0.4f options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         [self showResultList: true];
+                         
+                     } completion:^(BOOL completed){
+                         
+                         self.navigationItem.title = [NSString stringWithFormat:@"First %i Prime Numbers", value];
+                         
+                         [self.vcTop.upButton.layer addAnimation:[self bounceAnimationWithCompletion:^{
+                             self.vcTop.upButton.alpha = 1;
+                             
+                         }] forKey:@"com.cyt.view.bounceAnimation"];
+                         
+                     }];
+}
+
+- (void) resumePrimeNumbersGenerator
+{
+    [UIView animateWithDuration:0.4f delay:0.0f usingSpringWithDamping:0.75f initialSpringVelocity:0.4f options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         [self showResultList:false];
+                         
+                     } completion:^(BOOL completed) {
+                         self.navigationItem.title = @"Prime Numbers";
+                     }];
+}
+
+- (void) showResultList:(bool) show
+{
+    if (show)
     {
+        CGRect topFrame = self.topView.frame;
+
+        self.bottomConstraint.constant = topFrame.size.height - 44;
+        self.heightConstraint.constant = self.bottomConstraint.constant;
         
+        self.vcTop.centerButton.alpha = 0;
+        self.vcTop.titleLabel.alpha = 0;
+        
+        self.vcTop.inputField.alpha = 0;
+        
+        self.vcTop.view.backgroundColor = [UIColor whiteColor];
+        
+        
+        [self.view layoutIfNeeded];
     }
     else
     {
-        [self.vcResult getPrimeNumbersToNthNumber:[self.inputField.text intValue]];
+        
+        self.bottomConstraint.constant = 0;
+        self.heightConstraint.constant = self.bottomConstraint.constant;
+        
+        self.vcTop.centerButton.alpha = 1;
+        self.vcTop.titleLabel.alpha = 1;
+        
+        self.vcTop.inputField.text = nil;
+        self.vcTop.inputField.alpha = 1;
+        
+        
+        self.vcTop.view.backgroundColor = ThemeColor;
+        self.vcTop.upButton.alpha = 0;
+
+        
+        [self.view layoutIfNeeded];
     }
 }
 
 
-- (BOOL) validateInputFields:(NSString *) value
+- (CAKeyframeAnimation *) bounceAnimationWithCompletion:(void (^)(void))block
 {
-    if (value == nil || value.length == 0 ||[value isEqualToString:@""]) {return false;}
+    [CATransaction begin];
+
+    CAKeyframeAnimation *theAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
     
-    int number = [value intValue];
-    return  (number <= MaxInputValue && number >= MinInputValue);
+    theAnimation.values = @[@(0.05), @(1.1), @(0.9), @(1)];
+    
+    theAnimation.duration = 0.6;
+    NSMutableArray *timingFunctions = [[NSMutableArray alloc] initWithCapacity:theAnimation.values.count];
+    for (NSUInteger i = 0; i < theAnimation.values.count; i++) {
+        [timingFunctions addObject:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    }
+    [theAnimation setTimingFunctions:timingFunctions.copy];
+    theAnimation.removedOnCompletion = YES;
+    
+    [CATransaction setCompletionBlock:block];
+    [CATransaction commit];
+
+    
+    return theAnimation;
     
 }
 
