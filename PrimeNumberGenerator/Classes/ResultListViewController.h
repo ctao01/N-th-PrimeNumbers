@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RootViewController.h
 //  PrimeNumberGenerator
 //
 //  Created by Joy Tao on 8/11/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface ResultListViewController : UITableViewController
+- (void) getPrimeNumbersToNthNumber:(int)nth;
 @end
-
