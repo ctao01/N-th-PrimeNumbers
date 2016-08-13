@@ -17,11 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                                                 forBarPosition:UIBarPositionAny
-                                                     barMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.backgroundColor = ThemeColor;
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+//                                                 forBarPosition:UIBarPositionAny
+//                                                     barMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.backgroundColor = NavigationBarColor;
+//    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     self.navigationItem.title = @"Prime Numbers";
 
 }
