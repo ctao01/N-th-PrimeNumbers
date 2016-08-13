@@ -44,38 +44,51 @@
     }
 }
 
+
+
 #pragma mark - QueryController Delegate
 
 - (void) generatePrimeNumbersByInputValue:(int)value
 {
     [self.vcResult getPrimeNumbersToNthNumber:value];
     
-    
-    [UIView animateWithDuration:.6f delay:0.0f usingSpringWithDamping:0.75f initialSpringVelocity:0.4f options:UIViewAnimationOptionCurveEaseInOut
-                     animations:^{
-                         [self showResultList: true];
-                         
-                     } completion:^(BOOL completed){
-                         
-                         self.navigationItem.title = [NSString stringWithFormat:@"First %i Prime Numbers", value];
-                         
-                         [self.vcTop.upButton.layer addAnimation:[self bounceAnimationWithCompletion:^{
-                             self.vcTop.upButton.alpha = 1;
+//    NSString *deviceType = [UIDevice currentDevice].model;
+//    
+//    if([deviceType isEqualToString:iPhoneModel])
+//    {
+        [UIView animateWithDuration:.6f delay:0.0f usingSpringWithDamping:0.75f initialSpringVelocity:0.4f options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             [self showResultList: true];
                              
-                         }] forKey:@"com.cyt.view.bounceAnimation"];
-                         
-                     }];
+                         } completion:^(BOOL completed){
+                             
+                             self.navigationItem.title = [NSString stringWithFormat:@"First %i Prime Numbers", value];
+                             
+                             [self.vcTop.upButton.layer addAnimation:[self bounceAnimationWithCompletion:^{
+                                 self.vcTop.upButton.alpha = 1;
+                                 
+                             }] forKey:@"com.cyt.view.bounceAnimation"];
+                             
+                         }];
+//    }
+    
 }
 
 - (void) resumePrimeNumbersGenerator
 {
-    [UIView animateWithDuration:0.4f delay:0.0f usingSpringWithDamping:0.75f initialSpringVelocity:0.4f options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         [self showResultList:false];
-                         
-                     } completion:^(BOOL completed) {
-                         self.navigationItem.title = @"Prime Numbers";
-                     }];
+//    NSString *deviceType = [UIDevice currentDevice].model;
+//    if ([deviceType isEqualToString:iPhoneModel])
+//    {
+        [UIView animateWithDuration:0.4f delay:0.0f usingSpringWithDamping:0.75f initialSpringVelocity:0.4f options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             [self showResultList:false];
+                             
+                         } completion:^(BOOL completed) {
+                             self.navigationItem.title = @"Prime Numbers";
+                         }];
+//    }
+    
+  
 }
 
 - (void) showResultList:(bool) show

@@ -22,6 +22,13 @@
 
 @property (nonatomic, weak) id<QueryControllerDelegate> delegate;
 
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *inputWidth;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *inputHeight;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint * inputTopOffset;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint * inputBottomOffset;
+
+
+
 @end
 
 @protocol QueryControllerDelegate <NSObject>
