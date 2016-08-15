@@ -17,16 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="numbers_blur_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hoh-Ft-6Jk">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prime_iphone_x180.png" translatesAutoresizingMaskIntoConstraints="NO" id="kc0-Ac-j1Z">
+                                <rect key="frame" x="210" y="210" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="6cU-nH-J1K"/>
+                                    <constraint firstAttribute="height" constant="180" id="aD6-a3-CEI"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.71372549019999998" green="0.63529411759999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Hoh-Ft-6Jk" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Fjn-lA-Ql5"/>
-                            <constraint firstAttribute="bottom" secondItem="Hoh-Ft-6Jk" secondAttribute="bottom" id="PdZ-jW-7Ba"/>
-                            <constraint firstAttribute="trailing" secondItem="Hoh-Ft-6Jk" secondAttribute="trailing" id="Xbf-BQ-Sja"/>
-                            <constraint firstItem="Hoh-Ft-6Jk" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="uz6-az-zaX"/>
+                            <constraint firstItem="kc0-Ac-j1Z" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2Qu-Xh-Brc"/>
+                            <constraint firstItem="kc0-Ac-j1Z" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="V9G-86-1Z6"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="numbers_blur_bg.png" width="1000" height="667"/>
+        <image name="prime_iphone_x180.png" width="300" height="300"/>
     </resources>
 </document>
