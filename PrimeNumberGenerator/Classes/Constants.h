@@ -25,7 +25,7 @@
 
 /* Color */
 #define ThemeColor [UIColor colorWithRed:246.0f/255.0 green:146.0f/255.0 blue:60.0f/255.0 alpha:1.0]
-#define NavigationBarColor [UIColor colorWithRed:60.0f/255.0 green:246.0f/255.0 blue:146.0f/255.0 alpha:1.0]
+#define NavigationBarColor [UIColor colorWithRed:182.0f/255.0 green:162.0f/255.0 blue:145.0f/255.0 alpha:1.0]
 
 
 #define InputFieldNormalColor [UIColor colorWithRed:249.0f/255.0 green:177.0f/255.0 blue:116.0f/255.0 alpha:.7f]

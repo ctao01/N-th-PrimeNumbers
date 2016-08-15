@@ -168,9 +168,24 @@ typedef enum {
     cell.numberLabel.text = [NSString stringWithFormat:@"%@",[self.primeNumbers objectAtIndex:indexPath.row]];
     cell.indexLabel.text = [NSString stringWithFormat:@"(%li)", indexPath.row + 1];
     
+    UIView * selectedBackgroundView = [[UIView alloc]init];
+    selectedBackgroundView.backgroundColor = NavigationBarColor;
+    cell.selectedBackgroundView = selectedBackgroundView;
+
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PrimeNumberCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.numberLabel.textColor = [UIColor whiteColor];
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PrimeNumberCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.numberLabel.textColor = [UIColor blackColor];
+}
 
 #pragma mark - Private Methods
 
