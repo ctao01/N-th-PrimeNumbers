@@ -175,17 +175,6 @@ typedef enum {
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    PrimeNumberCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.numberLabel.textColor = [UIColor whiteColor];
-}
-
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    PrimeNumberCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.numberLabel.textColor = [UIColor blackColor];
-}
 
 #pragma mark - Private Methods
 
