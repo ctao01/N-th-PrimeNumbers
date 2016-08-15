@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9570126B1D5E64EA001B1284 /* numbers_blur_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9570126A1D5E64EA001B1284 /* numbers_blur_bg.png */; };
-		9570126E1D5E81E2001B1284 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9570126C1D5E81E2001B1284 /* Main_iPad.storyboard */; };
 		959645A21D5D7AED008F1F27 /* QueryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 959645A11D5D7AED008F1F27 /* QueryViewController.m */; };
 		95BD18581D5CEBD100EAC8D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 95BD18571D5CEBD100EAC8D2 /* main.m */; };
 		95BD18611D5CEBD100EAC8D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95BD185F1D5CEBD100EAC8D2 /* Main.storyboard */; };
@@ -33,7 +32,6 @@
 
 /* Begin PBXFileReference section */
 		9570126A1D5E64EA001B1284 /* numbers_blur_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbers_blur_bg.png; sourceTree = "<group>"; };
-		9570126D1D5E81E2001B1284 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		959645A01D5D7AED008F1F27 /* QueryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryViewController.h; sourceTree = "<group>"; };
 		959645A11D5D7AED008F1F27 /* QueryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryViewController.m; sourceTree = "<group>"; };
 		95BD18531D5CEBD100EAC8D2 /* PrimeNumberGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimeNumberGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +98,6 @@
 				95BD18641D5CEBD100EAC8D2 /* LaunchScreen.storyboard */,
 				95BD18671D5CEBD100EAC8D2 /* Info.plist */,
 				95BD18561D5CEBD100EAC8D2 /* Supporting Files */,
-				9570126C1D5E81E2001B1284 /* Main_iPad.storyboard */,
 			);
 			path = PrimeNumberGenerator;
 			sourceTree = "<group>";
@@ -214,7 +211,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9570126E1D5E81E2001B1284 /* Main_iPad.storyboard in Resources */,
 				95FD42501D615DEE009402C7 /* prime_iphone_x29.png in Resources */,
 				95FD424B1D615DEE009402C7 /* prime_ipad_pro_x167.png in Resources */,
 				95FD42531D615DEE009402C7 /* prime_iphone_x60.png in Resources */,
@@ -252,14 +248,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9570126C1D5E81E2001B1284 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9570126D1D5E81E2001B1284 /* Base */,
-			);
-			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
 		95BD185F1D5CEBD100EAC8D2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

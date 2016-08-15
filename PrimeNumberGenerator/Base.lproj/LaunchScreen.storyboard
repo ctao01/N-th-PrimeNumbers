@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="prime_iphone_x180.png" width="300" height="300"/>
+        <image name="prime_iphone_x180.png" width="180" height="180"/>
     </resources>
 </document>
